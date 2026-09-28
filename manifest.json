@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "BeeCrowd GitHun auto-push",
+    "version": "0.0.1",
+    "description": "Extensão simples e leve que tem como objetivo dar commit push para o GitHub sempre quando se tem uma resolução avaliada e correta.",
+    "icons": {
+        "32": "icons/extension-icon32x32.png",
+        "128": "icons/extension-icon128x128.png"
+    },
+    "version_name": "Build fs"
+}
