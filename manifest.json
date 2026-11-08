@@ -1,35 +1,41 @@
 {
-    "manifest_version": 3,
-    "name": "GitHuBee auto-push",
-    "version": "0.1.1",
-    "description": "Extensão simples que tem como objetivo dar commit push para o GitHub sempre quando se tem uma resolução avaliada como correta na plataforma beecrowd.",
-    "default-locale": "pt-BR",
-    "action": {
-        "default-icon": {
-            "16": "icons/extension-icon16x16.png",
-            "32": "icons/extension-icon32x32.png",
-            "48": "icons/extension-icon48x48.png",
-            "64": "icons/extension-icon64x64.png",
-            "96": "icons/extension-icon96x96.png",
-            "128": "icons/extension-icon128x128.png"
-        },
-        "default-tittle": "GitBee"
+  "manifest_version": 3,
+  "name": "GitHuBee auto-push",
+  "version": "1.0",
+  "description": "Extensão simples que tem como objetivo dar commit push para o GitHub sempre quando se tem uma resolução avaliada como correta na plataforma beecrowd.",
+  "default_locale": "pt_BR",
+  "action": {
+    "default_icon": {
+      "16": "icons/extension-icon16x16.png",
+      "32": "icons/extension-icon32x32.png",
+      "48": "icons/extension-icon48x48.png",
+      "64": "icons/extension-icon64x64.png",
+      "96": "icons/extension-icon96x96.png",
+      "128": "icons/extension-icon128x128.png"
     },
-    "browser_specific_settings": {
-        "gecko": {
-            "id": "GitHubeeAutoPush@mozilla.org",
-            "data_collection_permissions": {
-                "required": ["none"]
-            }
-        }
-    },
-    "content_scripts": [
-        {
-            "matches": ["*://judge.beecrowd.com/*/runs/code/*"],
-            "js": ["beeCrowdPush.js"]
-        }
-    ],
-    "host_permisions":[
-        "https://judge.beecrowd.com/*"
-    ]
+    "default_title": "GitBee"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "githubeeautopush@mozilla.org"
+    }
+  },
+  "permissions": [
+    "storage",
+    "identity"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://judge.beecrowd.com/*/runs/code/*"],
+      "js": ["beeCrowdPush.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://judge.beecrowd.com/*",
+    "https://api.github.com/*"
+  ]
 }
