@@ -1,0 +1,269 @@
+:root {
+    --bg: #0d1117;
+    --bg-panel: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --green: #238636;
+    --green-hover: #2ea043;
+    --red: #da3633;
+}
+
+body {
+    margin: 0;
+    padding: 16px;
+    width: 320px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, sans-serif;
+    box-sizing: border-box;
+}
+
+.screen {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.screen.active {
+    display: flex;
+}
+
+h1.logo {
+    font-size: 20px;
+    margin: 0;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.version {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.desc {
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.muted {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 4px 0 0 0;
+}
+
+.header-center {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+header-center div{
+  display: flex;
+  flex-direction: column;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-status {
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.red {
+    background: var(--red);
+}
+
+.dot.green {
+    background: var(--green);
+}
+
+.status-badge {
+    align-self: center;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+}
+
+.highlight-panel {
+    border-left: 3px solid var(--text-muted);
+    padding: 8px 12px;
+}
+
+.panel-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.details.panel {
+    gap: 6px;
+}
+
+.label {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.value {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 500;
+    word-break: break-all;
+    color: #ffffff;
+}
+
+.value:last-child {
+    margin-bottom: 0;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border: none;
+    transition: background 0.2s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: var(--green);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--green-hover);
+}
+
+.btn-secondary {
+    background: var(--bg-panel);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--border);
+}
+
+.btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-group button {
+    flex: 1;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.footer-link {
+    text-align: center;
+    font-size: 12px;
+}
+
+a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.footer-url {
+    margin: 0;
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.success-icon {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.circle-check {
+    width: 48px;
+    height: 48px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.success-title {
+    margin: 0 0 8px 0;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+}

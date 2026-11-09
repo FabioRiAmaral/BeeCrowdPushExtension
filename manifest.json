@@ -1,9 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "GitHuBee auto-push",
+  "name": "GitHuBee Push",
   "version": "1.0",
   "description": "Extensão simples que tem como objetivo dar commit push para o GitHub sempre quando se tem uma resolução avaliada como correta na plataforma beecrowd.",
-  "default_locale": "pt_BR",
   "action": {
     "default_icon": {
       "16": "icons/extension-icon16x16.png",
@@ -13,11 +12,12 @@
       "96": "icons/extension-icon96x96.png",
       "128": "icons/extension-icon128x128.png"
     },
-    "default_title": "GitBee"
+    "default_title": "GitBee",
+    "default_popup": "popup.html"
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "githubeeautopush@mozilla.org"
+      "id": "githubeepush@mozilla.org"
     }
   },
   "permissions": [
@@ -26,6 +26,7 @@
   ],
   "background": {
     "service_worker": "background.js",
+    "scripts": ["config.js","background.js"],
     "type": "module"
   },
   "content_scripts": [
@@ -36,6 +37,7 @@
   ],
   "host_permissions": [
     "https://judge.beecrowd.com/*",
-    "https://api.github.com/*"
+    "https://api.github.com/*",
+    "https://github.com/*"
   ]
 }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./popup.js" defer></script>
+  <title>GitBee</title>
+</head>
+<body>
+  <!-- Tela de login -->
+  <div id="screen-login" class="screen active">
+    <div class="header-center">
+      <img src="./icons/extension-icon32x32.png">
+      <div>
+        <h1 class="logo">GitBee</h1>
+        <span class="version">v0.1.1</span>
+      </div>
+    </div>
+    <div class="status-badge">
+      Não Conectado <span class="dot red"></span>
+    </div>
+    <p class="desc">Conecte sua conta do GitHub e faça commit de qualquer resolução do BeeCrowd, registre seus progresso de uma forma simples e rápida!</p>
+    <button id="btn-login" class="btn-primary"><img src="./icons/giticon.png" class="icon"> Logar com o GitHub</button>
+    <div class="footer-link">
+      <a href="https://github.com/FabioRiAmaral/BeeCrowdPushExtension">FabioRiAmaral/BeeCrowdPushExtension</a>
+      <p class="muted">Autenticação segura via OAuth.</p>
+    </div>
+  </div>
+  <!-- Tela para commit -->
+  <div id="screen-ready" class="screen">
+    <div class="header-row">
+      <div class="header-left">
+        <h1 class="logo"><img src="./icons/extension-icon16x16.png"> GitBee</h1>
+        <div class="user-status">
+          Conectado como <span id="user-name-ready">FabioRiAmaral</span> <span class="dot green"></span>
+        </div>
+      </div>
+      <div class="avatar"><img src="./icons/avatar.png"></div>
+    </div>
+    <div class="panel highlight-panel">
+      <p id="status-detection" class="panel-title">Procurando código...</p>
+    </div>
+    <div class="details">
+      <p class="label">Título da questão:</p>
+      <p id="val-title" class="value">...</p>
+      <p class="label">ID da Submissão:</p>
+      <p id="val-id-lang" class="value">...</p>
+      <p class="label">Pasta:</p>
+      <p id="val-folder" class="value">...</p>
+      <p class="label">Arquivo:</p>
+      <p id="val-file" class="value">...</p>
+    </div>
+    <button id="btn-send" class="btn-primary" disabled>PROCURAR & ENVIAR</button>
+    <p class="footer-url">Aba atual: <a id="val-url" href="#">...</a></p>
+  </div>
+  <!-- Tela de confirmação -->
+  <div id="screen-success" class="screen">
+    <div class="header-row">
+      <div class="header-left">
+        <h1 class="logo"><img src="./icons/extension-icon16x16.png"> GitBee</h1>
+        <div class="user-status">
+          Conectado como <span id="user-name-success">FabioRiAmaral</span> <span class="dot green"></span>
+        </div>
+      </div>
+    </div>
+    <div class="success-icon">
+      <div class="circle-check">✓</div>
+    </div>
+    <h2 class="success-title">Sucesso ao enviar!</h2>
+    <div class="details panel">
+      <p class="label">Repositório:</p>
+      <p class="value">beecrowd resolucoes <img src="./icons/lock.png"></p>
+      <p class="label">Destino:</p>
+      <p id="val-dest" class="value">...</p>
+    </div>
+    <div class="btn-group">
+      <button id="btn-github" class="btn-secondary">Ver no GitHub</button>
+      <button id="btn-close" class="btn-primary">OK / Fechar</button>
+    </div>
+  </div>
+</body>
+</html>
